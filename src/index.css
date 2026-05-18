@@ -1,0 +1,87 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+   background-color: aqua;
+}
+.myBox{
+    color: aqua;
+}
+.myContainer{
+    border: 2px solid black;
+    height: 360px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 20px;
+    padding: 40px;
+    box-shadow:10px 10px 5px grey ;
+    
+}
+
+.outerDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.myContainer>form>input{
+    margin: 15px;
+}
+.myContainer>form>button{
+    margin: 35px;
+}
+.inputBoxBorder{
+    border-radius: 20px;
+}
+.about{
+    display:flex;
+}
+.about>div>p{
+    padding: 20px;
+}
+.about>img{
+    width: 300px;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;   
+}
+.gallery img{
+    height: 350px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 20px;
+}
+.homeDiv{
+    padding: 20px;
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.homeInnerDiv{
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+    height: 330px;
+    width: 350px;
+}
+.homeChooseHeight{
+    height: 40px;
+    object-fit: cover;
+}
+.adminOuterDiv{
+  
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  
+}
+.adminInnerDiv{
+  height: 200px;
+  width: 700px;
+  background-color: aquamarine;
+  text-align: center;
+  margin: 20px;
+  padding: 50px;
+}
