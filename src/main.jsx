@@ -11,6 +11,7 @@ import HomePage from './components/home/home.jsx'
 import DoctorsPage from './components/doctors/doctors.jsx'
 import Apponitments from './components/appointment/appointment.jsx'
 import AddDoctor from './components/doctors/addDoctor.jsx'
+import SignUpPage from './components/signup/signUP.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -31,6 +32,10 @@ const router=createBrowserRouter([
   {
     path:"/addDoctorPage",
     element:<AddDoctor/>
+  },
+  {
+    path:"/signUpPage",
+    element:<SignUpPage/>
   }
 ])
 createRoot(document.getElementById('root')).render(

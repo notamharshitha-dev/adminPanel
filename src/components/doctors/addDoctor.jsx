@@ -2,7 +2,10 @@ import React from "react";
 import Navbar from "../navbar/navbar";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
+import { useGetNewDoctorDetailsByNameMutation, useLazyGetAllDoctorsByNameQuery } from "../../servies/addDoctorApi";
 function AddDoctor(){
+    var [addDoctorFn]=useGetNewDoctorDetailsByNameMutation();
+    var [getLatestDoctersFn]=useLazyGetAllDoctorsByNameQuery()
     var doctorForm=useFormik({
         initialValues:{
             name:"",
@@ -17,6 +20,12 @@ function AddDoctor(){
         },
         onSubmit:(values)=>{
             console.log(values)
+            addDoctorFn(values).then((res)=>{
+                console.log(res);
+                getLatestDoctersFn()
+            }).catch((err)=>{
+                console.log(err)
+            })
         }
     })
     return <div>
@@ -54,17 +63,17 @@ function AddDoctor(){
                 </div>               
                 <div className="form-floating  ">
                     <select className="form-select" id="floatingSelectDisabled" aria-label="Floating label  select example" {...doctorForm.getFieldProps("speciality")} >
-                        <option value="1">General</option>
-                        <option value="2">Dental</option>
-                        <option value="3">Mental</option>
-                        <option value="3">Eye</option>
+                        <option value="General">General</option>
+                        <option value="Dental">Dental</option>
+                        <option value="Mental">Mental</option>
+                        <option value="Eye">Eye</option>
                     </select>  
                     <label htmlFor="floatingSelectDisabled">Select speciality</label>                  
                 </div> 
                 <div className="form-floating  ">
                     <select className="form-select" id="floatingSelectDisabled" aria-label="Floating label  select example" {...doctorForm.getFieldProps("gender")} >
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>                        
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>                        
                     </select>   
                     <label htmlFor="floatingSelectDisabled">Select Gender</label>                 
                 </div> 

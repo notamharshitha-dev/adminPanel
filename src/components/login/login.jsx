@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetUserLoginByNameMutation } from "../../servies/loginApi";
 import { useFormik } from "formik";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function LoginPage(){
     var [getLoginFn]=useGetUserLoginByNameMutation();
     var [loginFailed,setLoginFailed]=useState(null)
@@ -19,7 +19,8 @@ function LoginPage(){
                 if(res.data.msg === "login success" ){
                     window.localStorage.setItem("username",res.data.username);
                     window.localStorage.setItem("token",res.data.token);
-                    setLoginFailed(null)
+                    setLoginFailed(null);
+                    navigate("/homePage")
                 }else{
                     setLoginFailed(res.data.msg)
                 }
@@ -56,7 +57,8 @@ function LoginPage(){
                         <input type="text"id="username" class="inputBoxBorder" {...loginForm.getFieldProps("username")} />
                         <label htmlFor="password">Password</label>
                         <input type="password" id="password" class="inputBoxBorder" {...loginForm.getFieldProps("password")} />                       
-                        { /*window.localStorage.getItem("username") ? navigate("/homePage") : */<button className="btn btn-primary" type="submit">Login </button> }  <br />               
+                        { /*window.localStorage.getItem("username") ? navigate("/homePage") : */<button className="btn btn-primary" type="submit">Login </button> }  <br />  
+                        <b>Not Yet Registered?</b><Link to="/signUpPage" >signUp</Link>   <br/><br />             
                         { loginFailed!==null && <b className="text-danger" >{loginFailed}</b> }                  
                     </form>                    
             </div>
