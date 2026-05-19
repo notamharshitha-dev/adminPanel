@@ -23,7 +23,10 @@ function Navbar(){
                             </li>
                             <li className="nav-item">
                             <Link className="nav-link" to="/doctorsPage">Doctors</Link>
-                            </li>                           
+                            </li>   
+                            <li className="nav-item">
+                            <Link className="nav-link" to="/allPatientsPage" >All Patients</Link>
+                            </li>                         
                             <li className="nav-item">
                             <Link className="nav-link" to="/appointments" >All Apponitments</Link>
                             </li>                          

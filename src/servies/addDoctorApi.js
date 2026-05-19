@@ -19,6 +19,14 @@ export const addDoctorApi = createApi({
             headers:{token:window.localStorage.getItem("token")}            
       }),
     }),
+    updateDoctorStatusByName: builder.mutation({
+      query: (updatedDoctor) => ({
+            url:"/updateDoctor",
+            method:"DELETE",
+            body:updatedDoctor,
+            headers:{token:window.localStorage.getItem("token")}            
+      }),
+    }),
     getAllDoctorsByName: builder.query({
       query: () => "/doctors",
     }),
@@ -27,4 +35,4 @@ export const addDoctorApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetNewDoctorDetailsByNameMutation,useDeleteDoctorDetailsByNameMutation,useGetAllDoctorsByNameQuery,useLazyGetAllDoctorsByNameQuery } = addDoctorApi
+export const { useGetNewDoctorDetailsByNameMutation,useDeleteDoctorDetailsByNameMutation,useGetAllDoctorsByNameQuery,useLazyGetAllDoctorsByNameQuery ,useUpdateDoctorStatusByNameMutation} = addDoctorApi

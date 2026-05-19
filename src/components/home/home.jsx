@@ -4,6 +4,7 @@ import { useGetAllDoctorsByNameQuery } from "../../servies/addDoctorApi";
 
 function HomePage(){
      var {isLoading,data}=useGetAllDoctorsByNameQuery();
+     console.log(data)
     return <div>
         <Navbar/>
         <div class="adminOuterDiv" >
@@ -13,7 +14,7 @@ function HomePage(){
             </div>
             <div class="adminInnerDiv bg-info " >
                 <h3>Total Doctors</h3>
-                <h3>{data.length}</h3>
+                <h3>{data?.length}</h3>
             </div>
             <div class="adminInnerDiv bg-warning " >
                 <h3>Total Earnings</h3>

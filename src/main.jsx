@@ -12,6 +12,7 @@ import DoctorsPage from './components/doctors/doctors.jsx'
 import Apponitments from './components/appointment/appointment.jsx'
 import AddDoctor from './components/doctors/addDoctor.jsx'
 import SignUpPage from './components/signup/signUP.jsx'
+import AllPatients from './components/patients/allPatients.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -36,6 +37,10 @@ const router=createBrowserRouter([
   {
     path:"/signUpPage",
     element:<SignUpPage/>
+  },
+  {
+    path:"/allPatientsPage",
+    element:<AllPatients/>
   }
 ])
 createRoot(document.getElementById('root')).render(

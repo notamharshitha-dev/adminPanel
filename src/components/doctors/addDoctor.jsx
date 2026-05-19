@@ -16,7 +16,8 @@ function AddDoctor(){
             experience:"",
             fees:"",
             phone:"",
-            address:""
+            address:"",
+            status:"available"
         },
         onSubmit:(values)=>{
             console.log(values)
