@@ -3,6 +3,7 @@ import { useGetAllPatientsByNameQuery } from "../../servies/patientsApi";
 import Navbar from "../navbar/navbar";
 function AllPatients(){
     var {isLoading,data}=useGetAllPatientsByNameQuery();
+    console.log(data)
     return <div>
         <Navbar/>
          {isLoading && <h1 className="text-center text-success" >Loading...</h1> }
@@ -20,14 +21,14 @@ function AllPatients(){
             </thead>
             <tbody>
                 {
-                    data?.map((doctorDeatils)=>{
+                    data?.map((patientDeatils)=>{
                         return <tr>
-                            <td>{data.indexOf(doctorDeatils)+1}</td>
-                            <td>{username}</td>
-                            <td>{dob}</td>
-                            <td>{address}</td>
-                            <td>{email}</td>
-                            <td>{phone}</td>
+                            <td>{data.indexOf(patientDeatils)+1}</td>
+                            <td>{patientDeatils.username}</td>
+                            <td>{patientDeatils.dob}</td>
+                            <td>{patientDeatils.address}</td>
+                            <td>{patientDeatils.email}</td>
+                            <td>{patientDeatils.phone}</td>
                         </tr>
                     })
                 }

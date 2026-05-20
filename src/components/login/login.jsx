@@ -16,13 +16,13 @@ function LoginPage(){
             console.log(values);
             getLoginFn(values).then((res)=>{
                 console.log(res);
-                if(res?.data?.msg === "login success" ){
+                if(res.data.msg === "Login Success" ){
                     window.localStorage.setItem("username",res.data.username);
                     window.localStorage.setItem("token",res.data.token);
                     setLoginFailed(null);
                     navigate("/homePage")
                 }else{
-                    setLoginFailed(res?.error?.data)
+                    setLoginFailed(res?.data?.msg)
                 }
             })
         }
