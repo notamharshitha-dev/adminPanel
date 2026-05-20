@@ -17,7 +17,7 @@ function AddDoctor(){
             fees:"",
             phone:"",
             address:"",
-            status:"available"
+            status:"available",
         },
         onSubmit:(values)=>{
             console.log(values)
@@ -33,7 +33,7 @@ function AddDoctor(){
         <Navbar/>
         
         <button ><Link  to="/doctorsPage" ><i className="bi bi-x-lg"></i></Link></button>
-        <form onSubmit={doctorForm.handleSubmit} >                 
+        <form onSubmit={doctorForm.handleSubmit}  >                 
                 <div className="form-floating mb-3">
                     <input type="email" className="form-control" id="floatingInputDisabled" placeholder="name@example.com" {...doctorForm.getFieldProps("email")} />
                     <label htmlFor="floatingInputDisabled">Email address</label>
@@ -42,6 +42,10 @@ function AddDoctor(){
                     <input type="text" className="form-control" id="floatingInputDisabled" placeholder="Degree" {...doctorForm.getFieldProps("name")} />
                     <label htmlFor="floatingInputDisabled">Name</label>
                 </div>
+                {/*<div className="form-floating mb-3">
+                    <input type="file" className="form-control" id="floatingInputDisabled" placeholder="phone"  {...doctorForm.getFieldProps("file")} />
+                    <label htmlFor="floatingInputDisabled">Upload File</label>
+                </div>*/}
                 <div className="form-floating mb-3">
                     <input type="text" className="form-control" id="floatingInputDisabled" placeholder="Degree" {...doctorForm.getFieldProps("degree")} />
                     <label htmlFor="floatingInputDisabled">Degree</label>

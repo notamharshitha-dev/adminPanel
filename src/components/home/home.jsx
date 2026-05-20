@@ -13,12 +13,12 @@ function HomePage(){
     var totalEarnings=0
     earningData?.forEach((a)=>
     {
-        //console.log(a.consultationFee)
+        console.log(a.consultationFee)
      if(a.status==="completed"){
             totalEarnings+=a.consultationFee
         }
      })
-     //console.log(totalEarnings)
+     console.log(totalEarnings)
     return <div>
         <Navbar/>
         <div class="adminOuterDiv" >

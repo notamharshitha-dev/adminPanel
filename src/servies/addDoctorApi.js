@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const addDoctorApi = createApi({
   reducerPath: 'addDoctorApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://hospital-appointment-system-jxhx.onrender.com' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://hospital-hrshta.onrender.com' }),
   endpoints: (builder) => ({
     getNewDoctorDetailsByName: builder.mutation({
       query: (newDoctor) => ({
@@ -22,7 +22,7 @@ export const addDoctorApi = createApi({
     updateDoctorStatusByName: builder.mutation({
       query: (updatedDoctor) => ({
             url:"/updateDoctor",
-            method:"DELETE",
+            method:"POST",
             body:updatedDoctor,
             headers:{token:window.localStorage.getItem("token")}            
       }),

@@ -20,7 +20,7 @@ function DoctorsPage(){
         console.log(updatedDoctorDetails);
         updateDoctorStatusFn(updatedDoctorDetails).then((res)=>{
             //console.log(res);
-            getLatestDoctorsFn()
+            getLatestDoctorsFn();
         })
     }
     return <div>
@@ -36,6 +36,7 @@ function DoctorsPage(){
                     <th>SPECIALITY</th>
                     <th>FEES</th>
                     <th>STATUS</th>
+                    <th>UPDATE STATUS</th>
                     <th>REMOVE</th>
                 </tr>
             </thead>
@@ -48,6 +49,7 @@ function DoctorsPage(){
                             <td>{doctorDeatils.gender}</td>
                             <td>{doctorDeatils.speciality}</td>
                             <td>{doctorDeatils.fees}</td>
+                            <td>{doctorDeatils.status}</td>
                             { doctorDeatils.status==='available' && <td><button className="btn btn-primary" onClick={()=>{ updateDoctorStatus({...doctorDeatils,status:"notAvailable"}) }} >update Status</button></td>  }
                             { doctorDeatils.status==='notAvailable' && <td><button className="btn btn-primary" onClick={()=>{ updateDoctorStatus({...doctorDeatils,status:"available"}) }} >update Status</button></td>  }
                             <td><button className="btn btn-primary" onClick={()=>{ deleteDoctor(doctorDeatils._id) }} >remove Doctor</button></td>
