@@ -53,13 +53,15 @@ body{
     border-radius: 20px;
 }
 .homeDiv{
+    text-align: center;
     padding: 20px;
     background-color: aqua;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 .homeInnerDiv{
+    text-align: center;
     border: 2px solid black;
     margin: 20px;
     padding: 20px;
@@ -84,4 +86,8 @@ body{
   text-align: center;
   margin: 20px;
   padding: 50px;
+}
+.center{
+    display: flex;
+    justify-content: center;
 }
